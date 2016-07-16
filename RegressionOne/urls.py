@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from RegressionOneApp.views import foo
+from RegressionOneApp import views
 from RegressionOneApp.views import bar
+from RegressionOneApp.views import foo
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^foo/$', foo),
-    url(r'^bar/$', bar),    
+    url(r'^bar/$', bar),
+
+    url(r'^thingamabobs/$', views.ThingamabobsView.as_view()),
 ]
